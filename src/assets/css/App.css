@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+  height: 100%;
+  min-height: 100vh;
+}
+
+a{
+  text-decoration: none !important;
+  color: white;
+}
+
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #eee;
+}
+.link {
+  color: #3f51b5
+}
+.formContainer{
+  margin: 10px auto;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.52);
+  background-color: white;
+  
+}
+.MuiContainer-root{
+  padding-top: 24px;
+}
+.imgView{
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 800px;
+  margin: 10px auto;
+  padding: 10px;
+}
+.search{
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 20px;
+}
+
+.list{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.MuiGrid-item{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 20px !important;
+}
+.App-link {
+  color: #09d3ac;
+}
+
+.iconLink{
+  color: black;
+}
+.MuiToolbar-root{
+  justify-content: space-between;
+}
+.MuiCardContent-root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  text-align: justify;
+}
+
+.navItems{
+  display: flex;
+  flex-direction: row;
+}
+
+.LinkMenuItem{
+  color:black !important;
+}
+
+.navItems .MuiTypography-root{
+  margin: auto;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.MuiCardActions-root{
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.MuiGrid-container{
+  margin-top: 20px;
+}
+
+.MuiGridList-root{
+  margin: 0px auto !important;
+  margin-top: 10px !important;
+}
+
+.MuiGridListTile-root{
+  height: auto !important;
+  padding: 10px !important;
+}
+.MuiCardMedia-root{
+  width: 100%;
+  height: 200px;
+}
+
+.MuiDivider-middle{
+  width: 94%;
+  margin: 0px auto !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.buttonForm{
+  padding-bottom: 40px !important;
+  text-align: right !important;
+}
+
+.buttonLogin
+{
+  padding-bottom: 40px !important;
+  padding-top: 20px !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttonForm Button{
+  margin: 0px auto !important;
+  margin: 10px !important;
+}
+
+.myFoo{
+  text-align: center;
+  margin-top: 2em;
+  bottom: 0;
+  width: 100% !important;
+  height: 100px !important ;
+  background: #8996de;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
