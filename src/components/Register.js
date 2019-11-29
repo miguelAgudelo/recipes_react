@@ -5,7 +5,7 @@ import axios from 'axios';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import swal from 'sweetalert';
 import { Redirect } from 'react-router-dom';
-
+import url from '../ApiUrl';
 class Register extends Component {
     
     nameRef = React.createRef();
@@ -49,7 +49,7 @@ class Register extends Component {
         this.setChange();
         
 		axios.post(
-			'http://localhost:3900/api/user',
+			url+'user',
 			this.state.user
 		).then(res => {
 			if (res.data.status === 'success') {

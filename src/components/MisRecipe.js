@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import Mycard from './Mycard';
-
+import url from '../ApiUrl';
 class MisRecipe extends Component {
     url = "http://localhost:3900/api/"
     searchRef = React.createRef()
@@ -28,7 +28,7 @@ class MisRecipe extends Component {
 	}
     UNSAFE_componentWillMount() {
         const sessionData = this.getUserInfo();
-        axios.get('http://localhost:3900/api/misrecipe',{ headers: {'Content-Type':'application/json','access-token': sessionData.token} })
+        axios.get(url+'misrecipe',{ headers: {'Content-Type':'application/json','access-token': sessionData.token} })
             .then((res) => {
                 if(res.data.recipes){
                     const recipes = res.data.recipes.map(recipe => {
@@ -59,7 +59,7 @@ class MisRecipe extends Component {
     
     handleDelete() {
         const sessionData = this.getUserInfo();
-		axios.get('http://localhost:3900/api/misrecipe', { headers: { 'Content-Type': 'application/json', 'access-token': sessionData.token } })
+		axios.get(url+'misrecipe', { headers: { 'Content-Type': 'application/json', 'access-token': sessionData.token } })
             .then((res) => {
                 this.setState({
                     recipes: res.data.recipes,

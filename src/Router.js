@@ -12,7 +12,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import Error from './components/Error';
 import axios from 'axios';
-
+import url from './ApiUrl';
 class Router extends Component {
     handleLogin = this.handleLogin.bind(this);
     constructor() {
@@ -29,7 +29,7 @@ class Router extends Component {
                 isLoget : false
             })
 		}else{
-			axios.get('http://localhost:3900/api/verify',{ headers: {'access-token': sessionData.token} })
+			axios.get(url+'verify',{ headers: {'access-token': sessionData.token} })
             .then((res) => {
                 if(res.data.message !== 'pass'){
                     this.setState({

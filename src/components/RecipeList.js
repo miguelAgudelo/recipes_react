@@ -12,9 +12,8 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import {Link} from 'react-router-dom';
 import Box from '@material-ui/core/Box';
-
+import url from '../ApiUrl';
 class RecipeList extends Component {
-    url = "http://localhost:3900/api/"
     searchRef = React.createRef()
     constructor(props){
         super(props);
@@ -26,7 +25,7 @@ class RecipeList extends Component {
     }
     
     UNSAFE_componentWillMount() {
-        axios.get('http://localhost:3900/api/recipes')
+        axios.get(url+'recipes')
             .then((res) => {
                 if(res.data.recipes){
                     const recipes = res.data.recipes.map(recipe => {

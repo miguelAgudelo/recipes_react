@@ -9,7 +9,7 @@ import Ingredient from './Ingredient';
 import Instruccion from './Instruccion';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Divider from '@material-ui/core/Divider';
-
+import url from '../ApiUrl';
 
 class RecipeUpdate extends Component {
     nameRef = React.createRef();
@@ -36,7 +36,7 @@ class RecipeUpdate extends Component {
 		};
         this.recipeId = this.props.match.params.id;
         const sessionData = this.getUserInfo()
-		axios.get('http://localhost:3900/api/verify',{ headers: {'access-token': sessionData.token} })
+		axios.get(url+'verify',{ headers: {'access-token': sessionData.token} })
             .then((res) => {
                 if(res.data.message !== 'pass'){
                     this.setState({
@@ -49,7 +49,7 @@ class RecipeUpdate extends Component {
         this.getRecipe(this.recipeId);
     }
     getRecipe = (id) => {
-        axios.get('http://localhost:3900/api/recipe/' + id)
+        axios.get(url+'recipe/' + id)
             .then((res) => {
                 this.setState({
                     recipe: res.data.recipe,
@@ -161,7 +161,7 @@ class RecipeUpdate extends Component {
         const sessionData = this.getUserInfo()
         const dataSend = this.state.recipe
         axios.put(
-            'http://localhost:3900/api/save/' + this.recipeId,
+            url+'save/' + this.recipeId,
             dataSend,
             { headers: {'Content-Type':'application/json','access-token': sessionData.token} }
         ).then(res => {
@@ -175,7 +175,7 @@ class RecipeUpdate extends Component {
                     const formData = new FormData();
                     formData.append('file0', this.state.selectedFile, this.state.selectedFile.name);
                     axios.post(
-                        'http://localhost:3900/api/upload-image/' + recipeId,
+                        url+'upload-image/' + recipeId,
                         formData,
                         { headers: {'access-token': sessionData.token} }
                     ).then(res => {

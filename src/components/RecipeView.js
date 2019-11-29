@@ -5,8 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Moment from 'react-moment';
+import url from '../ApiUrl';
 class RecipeView extends Component {
-    url = "http://localhost:3900/api/"
     constructor() {
         super()
         this.state = {
@@ -26,7 +26,7 @@ class RecipeView extends Component {
         this.getRecipe(this.recipeId);
     }
     getRecipe = (id) => {
-        axios.get(this.url + '/recipe/' + id)
+        axios.get(url + '/recipe/' + id)
             .then((res) => {
                 this.setState({
                     recipes: res.data.recipe,

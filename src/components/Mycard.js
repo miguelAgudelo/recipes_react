@@ -14,9 +14,8 @@ import Moment from 'react-moment';
 import axios from 'axios';
 import 'moment/locale/es';
 import swal from 'sweetalert';
-
+import url from '../ApiUrl';
 class Mycard extends Component {
-    url = "http://localhost:3900/api/"
 
     constructor(props) {
         super(props);
@@ -43,7 +42,7 @@ class Mycard extends Component {
             .then((willDelete) => {
                 if (willDelete) {
                     const token = this.getUserInfo()
-                    axios.delete('http://localhost:3900/api/recipe/' + recipeId, { headers: { 'Content-Type': 'application/json', 'access-token': token.token } })
+                    axios.delete(url+'recipe/' + recipeId, { headers: { 'Content-Type': 'application/json', 'access-token': token.token } })
                         .then(() => {
                             this.handleClose();
                             this.props.handleDelete();

@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 import { Redirect } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
-
+import url from '../ApiUrl';
 class Login extends Component {
     
     emailRef = React.createRef();
@@ -39,7 +39,7 @@ class Login extends Component {
         this.setChange();
         
 		axios.post(
-			'http://localhost:3900/api/auth',
+			url+'auth',
 			this.state.user
 		).then(res => {
 			if (res.data.status === 'success') {

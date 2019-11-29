@@ -9,8 +9,7 @@ import { Redirect } from 'react-router-dom';
 import Ingredient from './Ingredient';
 import Instruccion from './Instruccion';
 import Divider from '@material-ui/core/Divider';
-
-
+import url from '../ApiUrl';
 
 class RecipeSave extends Component {
 	nameRef = React.createRef();
@@ -41,7 +40,7 @@ class RecipeSave extends Component {
 				status: 'noautorize'
 			})
 		}else{
-			axios.get('http://localhost:3900/api/verify',{ headers: {'access-token': sessionData.token} })
+			axios.get(url+'verify',{ headers: {'access-token': sessionData.token} })
             .then((res) => {
                 if(res.data.message !== 'pass'){
                     this.setState({
@@ -68,7 +67,7 @@ class RecipeSave extends Component {
 		const sessionData = this.getUserInfo();
 		const dataSend = {user: sessionData.token,recipe:this.state.recipe}
 		axios.post(
-			'http://localhost:3900/api/save',
+			url+'save',
 			dataSend,
 			{ headers: {'Content-Type':'application/json','access-token': sessionData.token} }
 		).then(res => {
@@ -82,7 +81,7 @@ class RecipeSave extends Component {
 					const formData = new FormData();
 					formData.append('file0', this.state.selectedFile, this.state.selectedFile.name);
 					axios.post(
-						'http://localhost:3900/api/upload-image/' + recipeId,
+						url+'upload-image/' + recipeId,
 						formData,
 						{ headers: {'access-token': sessionData.token} }
 					).then(res => {
