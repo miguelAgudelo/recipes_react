@@ -49,7 +49,7 @@ class RecipeView extends Component {
 
         return (
             <Box display="flex" flexDirection="column" justifyContent="center" alignItems="flex-start" textAlign="justify" p={1} bgcolor="background.paper">
-                <img src={this.url + "get-image/" + this.state.recipes.image} alt={this.state.recipes.name} className="imgView" />
+                <img src={url + "get-image/" + this.state.recipes.image} alt={this.state.recipes.name} className="imgView" />
                 <Box m={1} margin="10px">
                     <Typography variant="h4">
                         {this.state.recipes.name}

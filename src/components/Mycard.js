@@ -93,7 +93,7 @@ class Mycard extends Component {
                                 </MenuItem>
                 </Menu>
                 <CardMedia
-                    image={this.url + "get-image/" + this.props.recipe.image}
+                    image={url + "get-image/" + this.props.recipe.image}
                     title={this.props.recipe.name}
                 />
                 <CardContent>

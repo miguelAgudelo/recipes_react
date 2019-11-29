@@ -74,7 +74,7 @@ class RecipeList extends Component {
                             subheader={<Moment fromNow >{recipe.date}</Moment>}
                         />
                         <CardMedia
-                            image={this.url + "get-image/" + recipe.image}
+                            image={url + "get-image/" + recipe.image}
                             title={recipe.name}
                         />
                         <CardContent>

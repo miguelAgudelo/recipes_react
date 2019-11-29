@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import Mycard from './Mycard';
 import url from '../ApiUrl';
 class MisRecipe extends Component {
-    url = "http://localhost:3900/api/"
+
     searchRef = React.createRef()
     handleDelete = this.handleDelete.bind(this);
     constructor(props){
